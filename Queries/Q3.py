@@ -13,7 +13,7 @@ cursor.execute(
     SELECT DISTINCT *
     FROM (
     SELECT brand, type FROM storage WHERE shop = "Kaohsiung1" AND is_empty = "yes"
-    UNION
+    INTERSECT
     SELECT brand, type FROM storage WHERE shop = "Kaohsiung2" AND is_empty = "yes"
     ) AS lack
     order BY brand
